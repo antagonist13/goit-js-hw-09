@@ -79,12 +79,11 @@ const gallery = document.querySelector(".gallery")
 function createMarkup(data) {
   return data.map(({ id, preview, original, description }) => `
   <li class="gallery-item" data-id="${id}">
-  <a class="gallery-link" href="${original} ">
+  <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
       src="${preview}"
       alt="${description}"
-      data-lightbox="gallery-item"
     />
   </a>
 </li>
@@ -93,6 +92,4 @@ function createMarkup(data) {
 }
 
 gallery.insertAdjacentHTML("beforeend", createMarkup(images));
-let lightbox = new SimpleLightbox('.gallery-item a.gallery-link');
-lightbox.preventDefault()
-      console.log(lightbox);
+let lightbox = new SimpleLightbox('.gallery li a', { captionsData: 'alt', captionsDelay: 250});
