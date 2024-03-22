@@ -1,5 +1,4 @@
-
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
   {
@@ -85,6 +84,7 @@ function createMarkup(data) {
       class="gallery-image"
       src="${preview}"
       alt="${description}"
+      data-lightbox="gallery-item"
     />
   </a>
 </li>
@@ -93,5 +93,6 @@ function createMarkup(data) {
 }
 
 gallery.insertAdjacentHTML("beforeend", createMarkup(images));
-
-let lightbox = new SimpleLightbox('.gallery-link')
+let lightbox = new SimpleLightbox('.gallery-item a.gallery-link');
+lightbox.preventDefault()
+      console.log(lightbox);
