@@ -29,7 +29,7 @@ textArea.value = JSON.parse(jsn).message
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (emailInput.value === '' || textArea.value === '') {
+    if (emailInput.value === '' || textArea.value.trim() === '') {
         alert('All form fields must be filled in')
         return
     }
