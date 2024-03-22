@@ -1,5 +1,5 @@
 const form = document.querySelector(".feedback-form")
-const STORAGE_KEY = "data"
+const STORAGE_KEY = "feedback-form-state"
 
 let tank = {
         email: "",
@@ -18,7 +18,7 @@ form.addEventListener("input", ((event) => {
 const emailInput = document.querySelector(".email-input")
 const textArea = document.querySelector(".textarea")
 
-const jsn = localStorage.getItem(("data"))
+const jsn = localStorage.getItem(("feedback-form-state"))
 if (jsn) {
 emailInput.value = JSON.parse(jsn).email
 textArea.value = JSON.parse(jsn).message
@@ -27,13 +27,18 @@ textArea.value = JSON.parse(jsn).message
     textArea.value = ""
 }
 
+const storedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (emailInput.value === '' || textArea.value.trim() === '') {
         alert('All form fields must be filled in')
         return
     }
-    console.log(JSON.parse(localStorage.getItem("data")));
-    localStorage.removeItem("data");
+    if ((storedData.email && !storedData.message) || (!storedData.email && storedData.message)) {
+        alert('Both form fields must be filled in');
+        return;
+    }
+    console.log(JSON.parse(localStorage.getItem("feedback-form-state")));
+    localStorage.removeItem("feedback-form-state");
   form.reset();
 });
