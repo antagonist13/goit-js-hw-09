@@ -2,7 +2,6 @@ import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
   {
-    id: 1,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
     original:
@@ -10,7 +9,6 @@ const images = [
     description: 'Hokkaido Flower',
   },
   {
-    id: 2,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
     original:
@@ -18,7 +16,6 @@ const images = [
     description: 'Container Haulage Freight',
   },
   {
-    id: 3,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
     original:
@@ -26,7 +23,6 @@ const images = [
     description: 'Aerial Beach View',
   },
   {
-    id: 4,
     preview:
       'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
     original:
@@ -34,7 +30,6 @@ const images = [
     description: 'Flower Blooms',
   },
   {
-    id: 5,
     preview:
       'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
     original:
@@ -42,7 +37,6 @@ const images = [
     description: 'Alpine Mountains',
   },
   {
-    id: 6,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
     original:
@@ -50,7 +44,6 @@ const images = [
     description: 'Mountain Lake Sailing',
   },
   {
-    id: 7,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
     original:
@@ -58,7 +51,6 @@ const images = [
     description: 'Alpine Spring Meadows',
   },
   {
-    id: 8,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
     original:
@@ -66,7 +58,6 @@ const images = [
     description: 'Nature Landscape',
   },
   {
-    id: 9,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
     original:
@@ -78,7 +69,7 @@ const images = [
 const gallery = document.querySelector(".gallery")
 function createMarkup(data) {
   return data.map(({ id, preview, original, description }) => `
-  <li class="gallery-item" data-id="${id}">
+  <li class="gallery-item">
   <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
