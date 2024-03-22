@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                      */const t=document.querySelector(".feedback-form");t.addEventListener("input",e=>{e.target.className==="email-input"?localStorage.setItem("email",e.target.value):localStorage.setItem("comment",e.target.value)});t.addEventListener("submit",e=>{e.preventDefault(),console.log(e.target.elements.message.value),localStorage.removeItem("email"),localStorage.removeItem("comment"),t.reset()});
+//# sourceMappingURL=commonHelpers2.js.map
