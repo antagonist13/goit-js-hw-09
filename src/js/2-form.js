@@ -35,7 +35,7 @@ form.addEventListener("submit", (event) => {
         return
     }
     if ((storedData.email && !storedData.message) || (!storedData.email && storedData.message)) {
-        alert('Both form fields must be filled in');
+        alert('Data entry error. To solve the problem - refresh the page ');
         return;
     }
     console.log(JSON.parse(localStorage.getItem("feedback-form-state")));
