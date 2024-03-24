@@ -32,10 +32,13 @@ form.addEventListener("submit", (event) => {
     const textArea = document.querySelector(".textarea");
 
     const storedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    
+    if (emailInput.value.trim() === '' || textArea.value.trim() === '') {
+        alert('All form fields must be filled in')
+        return
+    } 
     console.log({
-        email: emailInput.value,
-        message: textArea.value
+        email: emailInput.value.trim(),
+        message: textArea.value.trim()
     });
 
     localStorage.removeItem(STORAGE_KEY);
